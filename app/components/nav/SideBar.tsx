@@ -7,6 +7,10 @@ import { MdDashboard } from "react-icons/md";
 import { CgGames } from "react-icons/cg";
 import NavLink from "./NavLink";
 import Logo from "../defaults/Logo";
+import { MdDownloading } from "react-icons/md";
+import { IoSettingsOutline } from "react-icons/io5";
+
+
 
 export const NAV_LINKS = [
   {
@@ -30,9 +34,19 @@ export const NAV_LINKS = [
     icon: <MdDashboard />,
   },
   {
+    link: "/downloads",
+    label: "Downloads",
+    icon: <MdDownloading  />,
+  },
+  {
     link: "/friends",
     label: "Friends",
     icon: <BsFillPeopleFill />,
+  },
+  {
+    link: "/settings",
+    label: "Settings",
+    icon: <IoSettingsOutline  />,
   },
 ];
 
@@ -42,7 +56,7 @@ const SideBar = () => {
       <div className="pl-5 pt-5">
         <Logo />
       </div>
-      <div className=" py-5 px-10 ">
+      <div className=" py-5 px-10">
         {NAV_LINKS.map((navLink, i: number) => (
           <NavLink key={i} navLink={navLink} />
         ))}
