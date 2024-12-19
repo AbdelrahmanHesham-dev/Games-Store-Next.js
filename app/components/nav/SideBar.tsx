@@ -16,37 +16,37 @@ export const NAV_LINKS = [
   {
     link: "/",
     label: "Home",
-    icon: <GoHomeFill />,
+    icon: <GoHomeFill className="w-7 h-7" />,
   },
   {
     link: "/games",
     label: "Games",
-    icon: <CgGames />,
+    icon: <CgGames className="w-7 h-7" />,
   },
   {
     link: "/wishlist",
     label: "WIshlist",
-    icon: <FaHeart />,
+    icon: <FaHeart className="w-7 h-7" />,
   },
   {
     link: "/category",
     label: "Category",
-    icon: <MdDashboard />,
+    icon: <MdDashboard className="w-7 h-7" />,
   },
   {
     link: "/downloads",
     label: "Downloads",
-    icon: <MdDownloading  />,
+    icon: <MdDownloading className="w-7 h-7"  />,
   },
   {
     link: "/friends",
     label: "Friends",
-    icon: <BsFillPeopleFill />,
+    icon: <BsFillPeopleFill className="w-7 h-7" />,
   },
   {
     link: "/settings",
     label: "Settings",
-    icon: <IoSettingsOutline  />,
+    icon: <IoSettingsOutline className="w-7 h-7"  />,
   },
 ];
 
