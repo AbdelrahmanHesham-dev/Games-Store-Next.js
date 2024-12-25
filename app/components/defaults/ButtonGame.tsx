@@ -6,25 +6,25 @@ import Spinner from "./Spinner";
 
 const ButtonGame = ({
   className,
-  onClick,
+  // onClick,
   link,
   text,
   icon,
-  disabled = false,
-}: {
+}: // disabled = false,
+{
   className?: string;
-  onClick?: () => void;
+  // onClick?: () => void;
   link?: string;
   text: string;
   icon?: ReactElement;
-  disabled?: boolean;
+  // disabled?: boolean;
 }) => {
   return (
     <button
-      disabled={disabled}
-      onClick={() => {
-        onClick && onClick();
-      }}
+      // disabled={disabled}
+      // onClick={() => {
+      //   onClick?.();
+      // }}
       className={`${
         className || ""
       } hover:text-rose-400 duration-150 min-w-[100px] relative px-6 flex-initial gap-2 py-2 text-center m-auto`}
@@ -32,7 +32,8 @@ const ButtonGame = ({
       {ButtonSvg(false)}
       <span className=" relative">
         {" "}
-        {disabled ? <Spinner /> : link ? <Link href={link}>{text}</Link> : text}
+        {/* {disabled ? <Spinner /> : link ? <Link href={link}>{text}</Link> : text} */}
+        {link ? <Link href={link}>{text}</Link> : text}
       </span>
       {icon && icon}
     </button>
