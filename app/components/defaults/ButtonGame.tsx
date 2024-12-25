@@ -2,19 +2,19 @@
 import React, { ReactElement } from "react";
 import ButtonSvg from "../ButtonSvg";
 import Link from "next/link";
-import Spinner from "../defaults/Spinner";
+import Spinner from "./Spinner";
 
 const ButtonGame = ({
   className,
-  link,
   onClick,
+  link,
   text,
   icon,
   disabled = false,
 }: {
   className?: string;
-  link?: string;
   onClick?: () => void;
+  link?: string;
   text: string;
   icon?: ReactElement;
   disabled?: boolean;
@@ -27,10 +27,11 @@ const ButtonGame = ({
       }}
       className={`${
         className || ""
-      } hover:text-rose-400 duration-200 min-w-[100px] relative px-6 flex-initial gap-2 py-2 text-center m-auto`}
+      } hover:text-rose-400 duration-150 min-w-[100px] relative px-6 flex-initial gap-2 py-2 text-center m-auto`}
     >
       {ButtonSvg(false)}
-      <span className="relative">
+      <span className=" relative">
+        {" "}
         {disabled ? <Spinner /> : link ? <Link href={link}>{text}</Link> : text}
       </span>
       {icon && icon}
