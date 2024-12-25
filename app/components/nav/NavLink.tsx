@@ -17,7 +17,7 @@ const NavLink = ({
       href={navLink.link}
       className={`flex  ${
         isActive ? "  text-rose-400" : " text-gray-50"
-      } hover:text-rose-400   my-2 duration-200 gap-2 items-center p-2  rounded-md`}
+      } hover:text-rose-400 my-2 duration-200 gap-2 items-center p-2 rounded-md`}
     >
       {icon}
       {label}
