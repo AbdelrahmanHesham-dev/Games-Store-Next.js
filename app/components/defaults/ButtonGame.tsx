@@ -1,8 +1,8 @@
+"use client";
 import React, { ReactElement } from "react";
 import ButtonSvg from "../ButtonSvg";
 import Link from "next/link";
-import Spinner from "../defaults/Spinner"; 
-
+import Spinner from "../defaults/Spinner";
 
 const ButtonGame = ({
   className,
@@ -22,6 +22,9 @@ const ButtonGame = ({
   return (
     <button
       disabled={disabled}
+      onClick={() => {
+        onClick && onClick();
+      }}
       className={`${
         className || ""
       } hover:text-rose-400 duration-200 min-w-[100px] relative px-6 flex-initial gap-2 py-2 text-center m-auto`}

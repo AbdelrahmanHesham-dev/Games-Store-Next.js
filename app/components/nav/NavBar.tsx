@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Search from "../Search";
 import ButtonGame from "../defaults/ButtonGame";
