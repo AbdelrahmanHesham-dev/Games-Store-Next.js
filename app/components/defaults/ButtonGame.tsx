@@ -2,21 +2,21 @@
 import React, { ReactElement } from "react";
 import ButtonSvg from "../ButtonSvg";
 import Link from "next/link";
-import Spinner from "./Spinner";
+// import Spinner from "./Spinner";
 
 const ButtonGame = ({
   className,
   // onClick,
   link,
   text,
-  icon,
+  // icon,
 }: // disabled = false,
 {
   className?: string;
   // onClick?: () => void;
   link?: string;
   text: string;
-  icon?: ReactElement;
+  // icon?: ReactElement;
   // disabled?: boolean;
 }) => {
   return (
@@ -31,11 +31,10 @@ const ButtonGame = ({
     >
       {ButtonSvg(false)}
       <span className=" relative">
-        {" "}
         {/* {disabled ? <Spinner /> : link ? <Link href={link}>{text}</Link> : text} */}
         {link ? <Link href={link}>{text}</Link> : text}
       </span>
-      {icon && icon}
+      {/* {icon && icon} */}
     </button>
   );
 };
