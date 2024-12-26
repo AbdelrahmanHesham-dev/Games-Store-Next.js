@@ -1,10 +1,15 @@
 "use client";
 import Image from "next/image";
-import React, { ReactElement, ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type SwiperType from "swiper";
 import "swiper/css";
+
+type Item = {
+  card: React.ReactNode;
+  src?: string;
+};
 
 const SwiperCards = ({
   items,
@@ -12,12 +17,12 @@ const SwiperCards = ({
   className,
   slidesPerView,
 }: {
-  items: any[];
+  items: Item[];
   paginationImages?: boolean;
   className?: string;
   slidesPerView?: number;
 }) => {
-  const [swiper, setSwiper] = useState<SwiperType | null>();
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -26,10 +31,13 @@ const SwiperCards = ({
     }, 110);
     return () => clearInterval(t);
   }, [progress]);
+
   useEffect(() => {
-    swiper?.on("slideChange", () => {
-      setProgress(0);
-    });
+    if (swiper) {
+      swiper.on("slideChange", () => {
+        setProgress(0);
+      });
+    }
   }, [swiper]);
 
   return (
@@ -39,7 +47,7 @@ const SwiperCards = ({
         modules={[Autoplay]}
         spaceBetween={20}
         slidesPerView={slidesPerView || 1}
-        className={` rounded-3xl w-full relative ${className || " h-96"}`}
+        className={`rounded-3xl w-full relative ${className || "h-96"}`}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => setSwiper(swiper)}
       >
@@ -47,36 +55,36 @@ const SwiperCards = ({
           <SwiperSlide key={i}>{card}</SwiperSlide>
         ))}
       </Swiper>
-      <div className=" flex items-center gap-4">
+      <div className="flex items-center gap-4">
         {paginationImages &&
-          items.map(({ src }, i) => (
-            <div
-              onClick={() => {
-                swiper?.slideTo(i);
-                swiper?.autoplay.stop();
-              }}
-              key={i}
-              className={`${
-                swiper?.realIndex === i &&
-                " shadow-md  -translate-y-5 border-rose-500 border opacity-90"
-              } cursor-pointer hover:-translate-y-5 z-10  hover:shadow-md hover:opacity-90 duration-200 rounded-xl overflow-hidden max-w-lg w-full h-40 relative`}
-            >
-              {swiper?.realIndex === i && swiper.autoplay.running && (
-                <div
-                  style={{ width: `${progress}%` }}
-                  className=" duration-200 opacity-50 absolute  w-0 h-full inset-0 bg-gray-600 z-10"
-                ></div>
-              )}
-              {src && src !== "" ? (
+          items.map(({ src }, i) =>
+            typeof src === "string" && src.trim() !== "" ? (
+              <div
+                onClick={() => {
+                  swiper?.slideTo(i);
+                  swiper?.autoplay.stop();
+                }}
+                key={i}
+                className={`${
+                  swiper?.realIndex === i &&
+                  "shadow-md -translate-y-5 border-rose-500 border opacity-90"
+                } cursor-pointer hover:-translate-y-5 z-10 hover:shadow-md hover:opacity-90 duration-200 rounded-xl overflow-hidden max-w-lg w-full h-40 relative`}
+              >
+                {swiper?.realIndex === i && swiper.autoplay.running && (
+                  <div
+                    style={{ width: `${progress}%` }}
+                    className="duration-200 opacity-50 absolute w-0 h-full inset-0 bg-gray-600 z-10"
+                  ></div>
+                )}
                 <Image
                   alt="Image-pagination"
                   src={src}
                   fill
                   className="object-cover"
                 />
-              ) : null}{" "}
-            </div>
-          ))}
+              </div>
+            ) : null
+          )}
       </div>
     </div>
   );
