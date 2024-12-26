@@ -6,7 +6,7 @@ import Spinner from "../defaults/Spinner";
 const ButtonGame = ({
   text,
   link,
-  disabled,
+  disabled = false,
 }: {
   text: string;
   link?: string;
