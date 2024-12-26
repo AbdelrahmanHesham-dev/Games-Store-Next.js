@@ -9,8 +9,8 @@ const NavBar = () => {
       <header className="flex justify-between items-center">
         <Search />
         <div className="flex items-center gap-2">
-          <ButtonGame text="Login" />
-          <ButtonGame text="Sign Up" />
+          <ButtonGame link="/login" text="Login" />
+          <ButtonGame link="/signup" text="Sign Up" />
         </div>
       </header>
     </nav>
