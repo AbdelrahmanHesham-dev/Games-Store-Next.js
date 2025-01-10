@@ -8,13 +8,12 @@ const GamesSlider = ({
   slidesPerView,
   big,
 }: {
-  games: Game[];
+  games?: Game[];
   title: string;
   slidesPerView?: number;
   big?: boolean;
   screenBig?: boolean;
 }) => {
-  console.log(games);
   return (
     <div>
       <div className=" flex flex-col gap-6 mt-14">
