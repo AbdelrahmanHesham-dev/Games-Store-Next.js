@@ -47,7 +47,7 @@ const SwiperCards = ({
         modules={[Autoplay]}
         spaceBetween={20}
         slidesPerView={slidesPerView || 1}
-        className={`rounded-3xl w-full relative ${className || "h-96"}`}
+        className={`rounded-2xl w-full relative ${className || "h-96"}`}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => setSwiper(swiper)}
       >
