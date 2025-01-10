@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import SwiperCards from "./SwiperCards";
 import Link from "next/link";
 import Image from "next/image";
+import Heading from "./Heading";
 
 const GamesSlider = ({
   games = [],
+  title,
   slidesPerView,
   big,
 }: {
@@ -37,7 +39,8 @@ const GamesSlider = ({
     <div>
       <div className="flex flex-col gap-6 mt-14">
         <div className="w-full justify-between flex items-center">
-          <Link className="text-rose-300 font-semibold" href="/category">
+          <Heading text={title} />
+          <Link className="text-rose-300 font-semibold" href="/games">
             Browse All Games
           </Link>
         </div>
