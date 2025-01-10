@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const GamesSlider = ({
-  games,
+  games = [],
   slidesPerView,
   big,
 }: {
