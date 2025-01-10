@@ -14,7 +14,7 @@ export default function RootLayout({
       <ButtonGradient />
       <GridContainer className="background" cols={12}>
         <SideBar />
-        <MaxWidthWrapper className="col-span-full lg:col-span-10">
+        <MaxWidthWrapper className="col-span-full xl:col-span-10">
           <NavBar />
           {children}
         </MaxWidthWrapper>
