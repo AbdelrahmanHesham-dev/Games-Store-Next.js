@@ -1,2 +1,2 @@
 export const APIURL = "https://rawg.io/api/";
-export const KEY = "09cea297db89410a9d06a3e62933fb74"
+export const KEY = "a615d5f3f0194c579f8fd3aaf86770b9"

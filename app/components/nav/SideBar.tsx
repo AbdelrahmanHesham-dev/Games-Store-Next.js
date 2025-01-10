@@ -56,7 +56,7 @@ const SideBar = () => {
       <div
         className={`${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } fixed top-0 left-0 h-screen w-64 background col-span-2 text-gray-50 transform transition-transform duration-300 z-50 xl:translate-x-0 lg:static`}
+        } fixed top-0 left-0 h-screen w-64 background col-span-2 text-gray-50 transform transition-transform duration-300 z-50 xl:translate-x-0 lg:sticky`}
       >
         <div className="pl-5 pt-5">
           <Logo />
