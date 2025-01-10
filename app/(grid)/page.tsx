@@ -53,5 +53,3 @@ export default async function Home() {
     </section>
   );
 }
-
-<style scoped></style>
