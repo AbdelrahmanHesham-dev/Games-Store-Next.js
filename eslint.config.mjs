@@ -20,4 +20,4 @@ const config = {
 };
 
 
-export default eslintConfig;
+export default { ...eslintConfig, ...config };
