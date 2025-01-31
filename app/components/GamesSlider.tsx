@@ -83,7 +83,7 @@ const GamesSlider = ({
                   </div>
                   <Link
                     href={`/game/${game.id}`}
-                    className="text-base line-clamp-1 mt-2 text-white font-semibold"
+                    className="text-base line-clamp-1 mt-2 ml-5 text-white font-semibold"
                   >
                     {game.name}
                   </Link>
